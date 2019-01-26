@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebPixUIAdmin.Models.Auxiliares.Orcamentos.OrcamentoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEvento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Local)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InicioEvento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FimEvento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEvento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Local)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InicioEvento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FimEvento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mensagem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
